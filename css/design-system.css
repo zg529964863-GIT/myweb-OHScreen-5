@@ -1,0 +1,98 @@
+:root {
+  /* 颜色 */
+  --bg-primary: #f0f4f8;
+  --bg-gradient-start: #f5f7fa;
+  --bg-gradient-end: #e8ecf1;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-border: rgba(255, 255, 255, 0.6);
+  --surface-shadow: 0 8px 32px rgba(0, 82, 204, 0.08);
+
+  --accent-blue: #3b82f6;
+  --accent-cyan: #06b6d4;
+  --accent-amber: #f59e0b;
+  --accent-purple: #8b5cf6;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+
+  /* 间距 */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-2xl: 24px;
+  --space-3xl: 32px;
+
+  /* 圆角 */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 20px;
+
+  /* 阴影 */
+  --shadow-card: 0 4px 24px rgba(0, 82, 204, 0.06);
+  --shadow-card-hover: 0 12px 40px rgba(0, 82, 204, 0.12);
+  --shadow-hub: 0 8px 32px rgba(245, 158, 11, 0.12);
+
+  /* 字体 */
+  --font-base: "SF Pro Display", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "SF Mono", "Roboto Mono", monospace;
+  --font-din: "D-DIN", "DIN Alternate", "DIN", "Oswald", "Barlow Condensed", sans-serif;
+
+  /* 过渡 */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease-out;
+  --transition-slow: 400ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-base);
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* 响应式基础 */
+.container {
+  width: 100%;
+  max-width: 3840px;
+  margin: 0 auto;
+  padding: 0 var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.text-display { font-size: clamp(20px, 1.5vw, 28px); font-weight: 800; }
+.text-title { font-size: clamp(14px, 1.1vw, 16px); font-weight: 700; }
+.text-body { font-size: clamp(12px, 0.9vw, 14px); font-weight: 400; line-height: 1.5; }
+.text-caption { font-size: clamp(10px, 0.75vw, 11px); font-weight: 500; color: var(--text-tertiary); }
+.text-kpi { font-family: var(--font-mono); font-size: clamp(24px, 2.5vw, 48px); font-weight: 800; }

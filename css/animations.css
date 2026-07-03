@@ -1,0 +1,88 @@
+/* ========== 桌面滑动动画 ========== */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-100%); opacity: 0; }
+}
+
+/* ========== 线条绘制动画 ========== */
+@keyframes drawLine {
+  from { stroke-dashoffset: var(--line-length); }
+  to { stroke-dashoffset: 0; }
+}
+
+/* ========== 脉冲动画 ========== */
+@keyframes pulse {
+  0%, 100% { background-color: var(--surface); }
+  50% { background-color: rgba(255, 255, 255, 0.9); }
+}
+
+.animate-pulse {
+  animation: pulse 600ms ease-out;
+}
+
+/* ========== 淡入上移 ========== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========== 子元素交错淡入 ========== */
+.stagger-children > * {
+  opacity: 0;
+  animation: fadeInUp 500ms ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 80ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 160ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 240ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 320ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 400ms; }
+
+/* ========== 图表入场动画 ========== */
+@keyframes chartFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.chart-animate-in {
+  animation: chartFadeIn 800ms ease-out forwards;
+}
+
+/* ========== 数字滚动容器样式 ========== */
+.odometer {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ========== 行车动态滚动轮播 ========== */
+.traffic-scroll > div {
+  transition: transform 0.6s ease-in-out;
+}
